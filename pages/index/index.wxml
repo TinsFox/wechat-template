@@ -9,6 +9,5 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-    <view>{{$state.user.name}}：{{$state.msg}}</view>
   </view>
 </view>

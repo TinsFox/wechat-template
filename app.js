@@ -1,34 +1,14 @@
 //app.js
-import MiniRouter from './routes/routes'
-import Store from "./utils/store";
-let store = new Store({
-  state: {
-    msg: "这是一个全局状态",
-    user: {
-      name: "李四",
-    },
-    app:null
-  },
-});
-console.log(store.getState().msg); //这是一个全局状态 1.2.6+
-console.log(store.$state.msg); //这是一个全局状态 （不推荐）
-console.log(store); //这是一个全局状态 （不推荐）
+import MiniRouter from './routes/routes'//路由
+import Store from "./utils/store";//全局变量
+import http from "./utils/http"
 App({
   onLaunch: function () {
-    console.log('_fetch',wx)
-    console.log("app", this)
     this.$router = new MiniRouter()
-    console.log("appAffter", this)
-    store: store
-    const that = this
-    store.setState({
-      app: that
+    this.$http=http
+    store: new Store({
+      state: {},
     });
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -56,7 +36,10 @@ App({
       }
     })
   },
+  // 全局变量
   globalData: {
     userInfo: null
-  }
+  },
+  // 网络请求
+  // http : http
 })
