@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+import {login} from "../../api/demo"
 Page({
   data: {
     motto: 'Hello World',
@@ -16,7 +16,10 @@ Page({
     })
   },
   onLoad: function () {
-    console.log(app)
+    console.log(login)
+    login().then(res=>{
+      console.log(res)
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
