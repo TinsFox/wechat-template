@@ -1,0 +1,14 @@
+<scroll-view scroll-y class="scrollPage">
+  <view class="img-box">
+    <image src='/images/logo.png' mode='widthFix' class='png'></image>
+  </view>
+  <view class="bg-white padding">
+    <view class="grid col-4 margin-bottom text-center">
+      <view class="padding" wx:for="{{menuList}}" bindtap="navTo" data-url="{{item.url}}">
+        <image src="{{item.src}}" style="height:55px;wigth:20px"></image>
+        {{item.name}}
+      </view>
+    </view>
+  </view>
+  <view class='cu-tabbar-height'></view>
+</scroll-view>

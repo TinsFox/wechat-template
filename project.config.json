@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -33,13 +33,15 @@
     "useIsolateContext": true,
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true
+    "minifyWXSS": true,
+    "useApiHostProcess": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
-  "appid": "wxc54afcad769a4625",
+  "appid": "wx1751282640de8bb1",
   "projectname": "%E5%9F%BA%E4%BA%8E%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9A%84%E8%AF%BE%E5%AE%A4%E6%8A%A5%E9%9A%9C%E7%B3%BB%E7%BB%9F",
   "debugOptions": {
     "hidedInDevtools": []
@@ -49,23 +51,36 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "pages/home/map/map",
+          "pathName": "pages/home/map/map",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/report-for-repair/report-for-repair",
+          "pathName": "pages/home/report-for-repair/report-for-repair",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/order/order-detail/order-detail",
+          "pathName": "pages/home/order/order-detail/order-detail",
+          "query": "id=20201215552812",
+          "scene": null
+        }
+      ]
     }
   }
 }

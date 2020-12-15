@@ -1,7 +1,7 @@
 // 获取小程序全局配置（变量、函数等）
 const app = getApp()
 // 定义网络请求API地址
-const baseURL = '这里为你的api地址'
+const baseURL = 'http://127.0.0.1:9000/api/v2'
 // 封装网络请求开始
 const http = ({
   url,
@@ -29,17 +29,17 @@ const http = ({
         wx.hideLoading()
         // 进行状态码判断并处理
         if (res.statusCode === 204) {
-          resolve(res)
+          resolve(res.data)
         } else if (res.statusCode === 401) {
           // 检测到状态码401，进行token刷新并重新请求等操作
           refreshToken().then(() => _refetch(url, data, method)).then(resolve)
-        } else if (res.data.code !== 200) {
+        } else if (res.data.errorCode !== 0) {
           // 获取后台返回报错信息
           let title = res.data.err_msg
           // 调用全局toast方法
           showToast(title)
-        } else if (res.data.code === 200) {
-          resolve(res)
+        } else if (res.data.errorCode === 0) {
+          resolve(res.data.data)
         } else {
           reject(res)
         }
@@ -66,15 +66,11 @@ const getUrl = url => {
 }
 //获取用户userToken
 function getHeader() {
-  // 判断登录token是否存在
-  if (wx.getStorageSync('userToken')) {
-    // 获取token并设置请求头
-    var token = wx.getStorageSync('userToken')
-    let auth = {
-      'Authorization': token.token_type + " " + token.access_token
-    }
-    return auth
+  // 获取token并设置请求头
+  let auth = {
+    'Authorization': wx.$CacheGet("token")
   }
+  return auth
 }
 // 重构请求方式
 const _fetch = (content) => {
@@ -99,7 +95,7 @@ const refreshToken = () => {
       data: params,
       // 设置请求header 鉴权
       header: {
-        'Authorization': token.token_type + " " + token.access_token
+        'Authorization': 'Authorization' + token.access_token
       },
       method: 'post',
       // 请求响应处理

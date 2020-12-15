@@ -1,14 +1,34 @@
 {
-  "pages":[
-    "pages/index/index",
-    "pages/logs/logs"
+  "pages": [
+    "pages/tabBar/index/index",
+    "pages/tabBar/mine/mine",
+    "pages/home/map/map",
+    "pages/home/report-for-repair/report-for-repair",
+    "pages/home/order/order-detail/order-detail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+  "tabBar": {
+    "list": [{
+        "pagePath": "pages/tabBar/index/index",
+        "text": "功能",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_s.png"
+      },
+      {
+        "pagePath": "pages/tabBar/mine/mine",
+        "text": "我",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user_s.png"
+      }
+    ],
+    "color": "#333",
+    "selectedColor": "#87abda",
+    "borderStyle": "white"
   },
-  "style": "v2",
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "华广课室",
+    "navigationBarTextStyle": "black"
+  },
   "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,4 @@
+/* pages/home/map/map.wxss */
+.map{
+    margin-top: 40px;
+}

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "华广课室 - 报修",
+  "usingComponents": {
+    "tui-cascade-selection": "/dist/tui-cascade-selection/tui-cascade-selection",
+    "tui-bottom-popup": "/dist/tui-bottom-popup/tui-bottom-popup"
+  }
+}

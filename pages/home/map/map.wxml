@@ -1,0 +1,4 @@
+<!-- pages/home/map/map.wxml -->
+<view class="map">
+    <image class="" src="/images/map.png" mode="widthFix" lazy-load="false" binderror="" bindload="" />
+</view>

@@ -1,0 +1,7 @@
+/* pages/tabBar/index/index.wxss */
+.png{
+    height:30px;width:50%;
+}
+.img-box{
+    text-align: center;
+}
